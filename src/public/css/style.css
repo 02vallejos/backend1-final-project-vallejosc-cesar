@@ -1,0 +1,246 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #49498f;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff5a5f;
+    text-decoration: none;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ff5a5f;
+}
+
+/* Contenido de la primera vista */
+#content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas fijas */
+    gap: 20px;
+    padding: 100px 30px 30px; /* Espaciado extra para el header fijo */
+}
+
+/* Tarjetas estilo Pinterest */
+.card {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 250px; /* Tamaño fijo */
+    height: 350px; /* Tamaño fijo */
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Necesario para posicionar los botones */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 150px; /* Tamaño fijo para las imágenes */
+    object-fit: cover;
+}
+
+.card .content {
+    padding: 15px;
+    flex-grow: 1; /* El contenido crece para llenar el espacio */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Espaciado entre título, descripción y botón */
+}
+
+.card .content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card .content p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: auto; /* Empuja el botón hacia abajo */
+}
+
+.card .content a {
+     text-decoration: none;
+    color: #ff5a5f;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.card .content a:hover {
+    color: #ff7f7f;
+}
+
+/* Botón general */
+.btn {
+    display: inline-block;
+    background-color: #ff5a5f;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ff7f7f;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Estilo actualizado para el formulario */
+.upload {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 25px;
+    background-color: #88b5da;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.upload h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.upload__container--image,
+.upload__container--title,
+.upload__container--description,
+.upload__container--code,
+.upload__container--price,
+.upload__container--Stock,
+.upload__container--category,
+.upload__container--thumbnail,
+.upload__container--button {
+    margin-bottom: 20px;
+}
+
+#status {
+    margin-bottom: 20px; /* Espaciado adicional para el select */
+}
+
+.upload label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.upload input[type="text"],
+.upload input[type="number"],
+.upload input[type="file"],
+.upload select {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.upload input[type="text"]:focus,
+.upload input[type="number"]:focus,
+.upload input[type="file"]:focus,
+.upload select:focus {
+    border-color: #ff5a5f;
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 6px rgba(255, 90, 95, 0.4);
+}
+
+.upload select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6' fill='%23555'%3E%3Cpath d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+.upload__container--button input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff5a5f;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.upload__container--button input[type="submit"]:hover {
+    background-color: #ff7f7f;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .upload {
+        padding: 20px;
+    }
+
+    .upload__container--button input[type="submit"] {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
+

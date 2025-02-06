@@ -1,0 +1,39 @@
+<header>
+  <a href="/products" class="logo"> Productos</a>
+
+  <nav>
+    <ul>
+      <li><a href="/products/upload" class="btn">Upload</a></li>
+      <li><a href="/carts" class="btn">Carrito</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div id="content">
+  {{#each products}}
+  <div class="card">
+    <img src="{{this.thumbnail}}" alt="{{this.title}}">
+    <div class="content">
+      <h3>{{this.title}}</h3>
+      <p>{{this.description}}</p>
+      <a href="/image/{{this._id}}/delete" class="btn">Eliminar</a>
+    </div>
+  </div>
+  {{/each}}
+</div>
+
+<div id="pagination">
+  {{#if hasPrevPage}}
+    <a href="/products?page={{prevPage}}" class="btn">Página anterior</a>
+  {{else}}
+    <button class="btn disabled" disabled>Página anterior</button>
+  {{/if}}
+
+  <span class="current-page">Página {{currentPage}} de {{totalPages}}</span>
+
+  {{#if hasNextPage}}
+    <a href="/products?page={{nextPage}}" class="btn">Página siguiente</a>
+  {{else}}  
+    <button class="btn disabled" disabled>Página siguiente</button>
+  {{/if}}
+</div>

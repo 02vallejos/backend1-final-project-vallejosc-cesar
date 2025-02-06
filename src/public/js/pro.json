@@ -1,0 +1,203 @@
+[
+    {
+      "title": "Microscopio Trinocular",
+      "description": "Gtools Aro De Led + B3 + Cámara",
+      "code": "MIC123",
+      "status": true,
+      "price": 566666,
+      "stock": 2,
+      "category": "3",
+      "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_729254-MLA81581827515_122024-O.webp"
+    },
+    {
+      "title": "Auriculares Bluetooth",
+      "description": "Auriculares inalámbricos con cancelación de ruido",
+      "code": "AUR456",
+      "status": true,
+      "price": 29999,
+      "stock": 50,
+      "category": "1",
+      "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_722173-MLA53447645619_012023-O.webp"
+    },
+    {
+      "title": "Notebook HP",
+      "description": "Notebook HP 15.6 pulgadas, Intel Core i5",
+      "code": "NBK789",
+      "status": true,
+      "price": 399999,
+      "stock": 10,
+      "category": "2",
+      "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_654189-MLA51817032354_102022-O.webp"
+    },
+    {
+      "title": "Cafetera Eléctrica",
+      "description": "Cafetera programable con filtro permanente",
+      "code": "CAF101",
+      "status": true,
+      "price": 45999,
+      "stock": 25,
+      "category": "4",
+      "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_729836-MLA49851691138_052022-O.webp"
+    },
+    {
+      "title": "Silla Gamer",
+      "description": "Silla ergonómica con soporte lumbar",
+      "code": "SIL234",
+      "status": true,
+      "price": 159999,
+      "stock": 15,
+      "category": "5",
+      "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_642291-MLA49423149221_032022-O.webp"
+    },
+    {
+      "title": "Teléfono Celular Samsung",
+      "description": "Samsung Galaxy S23 Ultra",
+      "code": "CEL567",
+      "status": true,
+      "price": 859999,
+      "stock": 5,
+      "category": "6",
+      "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_747695-MLA52432766418_112022-O.webp"
+    },
+    {
+      "title": "Consola PlayStation 5",
+      "description": "PS5 edición estándar con mando",
+      "code": "PS5101",
+      "status": true,
+      "price": 750000,
+      "stock": 8,
+      "category": "7",
+      "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_620346-MLA48050395434_102021-O.webp"
+    },
+    {
+      "title": "Televisor LG 55\"",
+      "description": "Smart TV LG UHD 4K",
+      "code": "TV123",
+      "status": true,
+      "price": 450000,
+      "stock": 12,
+      "category": "8",
+      "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_707474-MLA49541007247_042022-O.webp"
+    },
+    {
+      "title": "Cámara de Seguridad",
+      "description": "Cámara IP Full HD para exteriores",
+      "code": "CAM456",
+      "status": true,
+      "price": 19999,
+      "stock": 30,
+      "category": "9",
+      "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_728961-MLA49879175873_052022-O.webp"
+    },
+    {
+      "title": "Parlante Bluetooth JBL",
+      "description": "Parlante portátil resistente al agua",
+      "code": "PAR789",
+      "status": true,
+      "price": 24999,
+      "stock": 20,
+      "category": "10",
+      "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_730983-MLA50236653171_062022-O.webp"
+    },
+    {
+      "title": "Tablet Samsung Galaxy",
+      "description": "Tablet de 10.4 pulgadas con S Pen",
+      "code": "TAB101",
+      "status": true,
+      "price": 349999,
+      "stock": 7,
+      "category": "11",
+      "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_633502-MLA50901743278_072022-O.webp"
+    },
+    {
+      "title": "Smartwatch Xiaomi",
+      "description": "Reloj inteligente con monitor de actividad",
+      "code": "SMA234",
+      "status": true,
+      "price": 9999,
+      "stock": 40,
+      "category": "12",
+      "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_819376-MLA51026857248_082022-O.webp"
+    },
+    {
+      "title": "Aspiradora Robot",
+      "description": "Aspiradora inteligente con Wi-Fi",
+      "code": "ASP567",
+      "status": true,
+      "price": 299999,
+      "stock": 10,
+      "category": "13",
+      "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_687156-MLA50529547985_072022-O.webp"
+    },
+    {
+      "title": "Bicicleta Eléctrica",
+      "description": "Bicicleta urbana con motor eléctrico",
+      "code": "BIC123",
+      "status": true,
+      "price": 750000,
+      "stock": 5,
+      "category": "14",
+      "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_746320-MLA50501985368_062022-O.webp"
+    },
+    {
+      "title": "Licuadora Philips",
+      "description": "Licuadora con vaso de vidrio y 5 velocidades",
+      "code": "LIC456",
+      "status": true,
+      "price": 45999,
+      "stock": 25,
+      "category": "15",
+      "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_733454-MLA49839546321_052022-O.webp"
+    },
+    {
+      "title": "Monitor Gamer",
+      "description": "Monitor curvo de 27 pulgadas, 144Hz",
+      "code": "MON789",
+      "status": true,
+      "price": 349999,
+      "stock": 8,
+      "category": "16",
+      "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_893626-MLA51502630297_092022-O.webp"
+    },
+    {
+      "title": "Zapatillas Adidas",
+      "description": "Zapatillas deportivas para running",
+      "code": "ZAP101",
+      "status": true,
+      "price": 25999,
+      "stock": 20,
+      "category": "17",
+      "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_613572-MLA47846887947_102021-O.webp"
+    },
+    {
+      "title": "Cocina Whirlpool",
+      "description": "Cocina a gas de 4 hornallas con horno",
+      "code": "COC234",
+      "status": true,
+      "price": 199999,
+      "stock": 10,
+      "category": "18",
+      "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_659487-MLA52201507697_102022-O.webp"
+    },
+    {
+      "title": "Heladera No Frost",
+      "description": "Heladera con freezer 350L",
+      "code": "HEL567",
+      "status": true,
+      "price": 459999,
+      "stock": 6,
+      "category": "19",
+      "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_729278-MLA48008636777_102021-O.webp"
+    },
+    {
+      "title": "Cinta de Correr",
+      "description": "Cinta eléctrica plegable para entrenamiento",
+      "code": "CIN789",
+      "status": true,
+      "price": 399999,
+      "stock": 4,
+      "category": "20",
+      "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_640985-MLA49787724597_042022-O.webp"
+    }
+  ]
+  
