@@ -90,17 +90,36 @@ class CartManager {
 
     async updateProductQuantity(cartId, productId, newQuantity) {
         try {
+
+            // console.log("cart id " + cartId)
+            // console.log("productId " + productId)
+            // console.log("newQuantity " + newQuantity)
+
+            // const cart = await CartModel.findById(cartId).populate('products.product', '_id title price');
+
+            // if (!cart) {
+            //     throw new Error('Carrito no encontrado');
+            // }
+
+            // console.log("datos de cart " + cart)
+            // console.log("datos de cart:", JSON.stringify(cart, null, 2));
+
+
             const cart = await CartModel.findById(cartId);
+            // console.log("cart: " + cart)
 
             if (!cart) {
                 throw new Error('Carrito no encontrado');
             }
 
-            const productIndex = cart.products.findIndex(item => item.product._id.toString() === productId);
+            const productIndex = cart.products.findIndex(
+                item => item.product._id.toString() == productId
+            );
+
+            // console.log("cart.products: " + cart.products)
 
             if (productIndex !== -1) {
                 cart.products[productIndex].quantity = newQuantity;
-
 
                 cart.markModified('products');
 
@@ -115,7 +134,7 @@ class CartManager {
         }
     }
 
-    async vaciarCarrito(cartId) {
+    async deleteCart(cartId) {
         try {
             const cart = await CartModel.findByIdAndUpdate(
                 cartId,

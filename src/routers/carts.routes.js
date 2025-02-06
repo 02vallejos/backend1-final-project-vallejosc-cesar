@@ -122,7 +122,7 @@ cartsRouter.delete('/:cid', async (req, res) => {
     try {
         const cartId = req.params.cid;
 
-        const updatedCart = await cartManager.vaciarCarrito(cartId);
+        const updatedCart = await cartManager.deleteCart(cartId);
 
         res.json({
             status: 'success',
