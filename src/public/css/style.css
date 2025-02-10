@@ -1,4 +1,4 @@
-/* Reset básico */
+* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -32,23 +32,39 @@ header .logo {
     font-weight: bold;
     color: #ff5a5f;
     text-decoration: none;
+    flex-shrink: 0;
+}
+
+header nav {
+    flex-grow: 1; /* Ocupa el espacio restante */
+    display: flex;
+    justify-content: flex-end; /* Alinea los botones a la derecha */
 }
 
 header nav ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     gap: 15px;
+    margin: 0; /* Elimina márgenes */
+    padding: 0; /* Elimina paddings */
+    max-width: 100%; /* Evita que el ul exceda el ancho del contenedor */
+    overflow: hidden; /* Oculta el contenido desbordado (opcional) */
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
 }
 
 header nav ul li a {
     text-decoration: none;
     color: #333;
     font-weight: 500;
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
     transition: color 0.3s;
 }
 
 header nav ul li a:hover {
-    color: #ff5a5f;
+    background-color: #ff5a5f;
+    color: #fff;
 }
 
 /* Contenido de la primera vista */
@@ -56,7 +72,8 @@ header nav ul li a:hover {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 columnas fijas */
     gap: 20px;
-    padding: 100px 30px 30px; /* Espaciado extra para el header fijo */
+    padding: 30px;
+    margin-top: 100px; 
 }
 
 /* Tarjetas estilo Pinterest */
@@ -243,4 +260,3 @@ header nav ul li a:hover {
         padding: 10px;
     }
 }
-

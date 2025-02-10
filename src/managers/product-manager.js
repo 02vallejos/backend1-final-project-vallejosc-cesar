@@ -109,15 +109,6 @@ class ProductManager {
         }
     }
 
-    // async readProducts(limit, page, sort, query ) {
-    //     try {
-    //         const arrayProducts = await ProductsModel.paginate({}, {limit, page, sort, query });
-    //         return arrayProducts;
-    //     } catch (error) {
-    //         console.error("Error al leer los Productos - Product Manager", error);
-    //     }
-    // }
-
     async updateProductForId(id, productUpdated) {
         try {
             const arrayProducts = await this.readProducts();
@@ -136,7 +127,7 @@ class ProductManager {
         }
     }
 
-    async deleteProduct(id) {
+    async deleteProductById(id) {
         try {
             const arrayProducts = await this.readProducts();
             const index = arrayProducts.findIndex(prod => prod.id == id);

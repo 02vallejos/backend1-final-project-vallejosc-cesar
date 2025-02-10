@@ -7,4 +7,41 @@
     </ul>
   </nav>
 </header>
-<h1>Estoy en el carrito</h1>
+
+<h1>{{title}}</h1>
+<p>Total de carritos: {{totalCarts}}</p>
+
+{{#each carts}}
+<div class="cart-container">
+    <h2>Carrito ID: {{_id}}</h2>
+    {{#if products.length}}
+        <ul>
+        {{#each products}}
+            <li>
+                Producto: {{product.title}}<br>
+                Precio: {{product.price}}<br>
+                Cantidad: {{quantity}}
+            </li>
+        {{/each}}
+        </ul>
+    {{else}}
+        <p>El carrito no tiene productos.</p>
+    {{/if}}
+</div>
+{{/each}}
+
+<div id="pagination">
+  {{#if hasPrevPage}}
+    <a href="/carts?page={{prevPage}}" class="btn">Página anterior</a>
+  {{else}}
+    <button class="btn disabled" disabled>Página anterior</button>
+  {{/if}}
+
+  <span class="current-page">Página {{currentPage}} de {{totalPages}}</span>
+
+  {{#if hasNextPage}}
+    <a href="/carts?page={{nextPage}}" class="btn">Página siguiente</a>
+  {{else}}  
+    <button class="btn disabled" disabled>Página siguiente</button>
+  {{/if}}
+</div>

@@ -11,6 +11,19 @@ class CartManager {
         }
     }
 
+    async getAllCarts() {
+        try {
+            const carts = await CartModel.find().lean();
+
+            if (!carts || carts.length === 0) {
+                throw new Error('Carrito no encontrado');
+            }   
+            return carts;
+        } catch (error) {
+            console.log("Error al obeter los carritos - CM" + error);
+        }
+    }
+
     async getCartById(cartId) {
         try {
             const cart = await CartModel.findById(cartId);
@@ -90,23 +103,7 @@ class CartManager {
 
     async updateProductQuantity(cartId, productId, newQuantity) {
         try {
-
-            // console.log("cart id " + cartId)
-            // console.log("productId " + productId)
-            // console.log("newQuantity " + newQuantity)
-
-            // const cart = await CartModel.findById(cartId).populate('products.product', '_id title price');
-
-            // if (!cart) {
-            //     throw new Error('Carrito no encontrado');
-            // }
-
-            // console.log("datos de cart " + cart)
-            // console.log("datos de cart:", JSON.stringify(cart, null, 2));
-
-
             const cart = await CartModel.findById(cartId);
-            // console.log("cart: " + cart)
 
             if (!cart) {
                 throw new Error('Carrito no encontrado');

@@ -37,7 +37,16 @@ const productManager = new ProductManager();
         }
     })
 
-productsRouter.route("/:pid")
+productsRouter.delete("/:pid",async (res, req) => {
+    try {
+        const productId = req.params.pid;
+        const updatedCart = await productManager.deleteProductById(cartId);
+        res.redirect("/");
+    } catch (error) {
+        console.error("Error al eliminar el producto", error);
+        res.status(500).send("Error en el servidor al eliminar el producto + PM");
+    }
+})
 
 
 export default productsRouter;

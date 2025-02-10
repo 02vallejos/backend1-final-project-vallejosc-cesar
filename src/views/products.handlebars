@@ -16,7 +16,8 @@
     <div class="content">
       <h3>{{this.title}}</h3>
       <p>{{this.description}}</p>
-      <a href="/image/{{this._id}}/delete" class="btn">Eliminar</a>
+      <a href="/api/products/{{this._id}}" class="btn">Eliminar</a>
+      <a href="/addToCar/{{this._id}}/addToCard" class="btn">Agregar carrito</a>
     </div>
   </div>
   {{/each}}
