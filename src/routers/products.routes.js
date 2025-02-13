@@ -1,6 +1,5 @@
 import { Router } from "express";
 import ProductManager from "../managers/product-manager.js";
-import upload from "../service/uploader.products.js";
 
 const productsRouter = Router();
 const productManager = new ProductManager();
@@ -37,16 +36,14 @@ const productManager = new ProductManager();
         }
     })
 
-productsRouter.delete("/:pid",async (res, req) => {
+productsRouter.get("/delete/:pid", async (req, res) => {
     try {
-        const productId = req.params.pid;
-        const updatedCart = await productManager.deleteProductById(cartId);
-        res.redirect("/");
+        const productId = req.params.pid;   
+        const updatedCart = await productManager.deleteProductById(productId);
+        res.redirect("/products");
     } catch (error) {
         console.error("Error al eliminar el producto", error);
-        res.status(500).send("Error en el servidor al eliminar el producto + PM");
     }
 })
-
 
 export default productsRouter;

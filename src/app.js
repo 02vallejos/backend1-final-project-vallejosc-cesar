@@ -21,7 +21,11 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, "public")));
 
 // VIEWS
-app.engine('handlebars', engine());
+app.engine('handlebars', engine({
+    helpers: {
+        eq: (a, b) => a === b
+    }
+}));
 app.set('view engine', 'handlebars');
 app.set('views', './src/views');
 

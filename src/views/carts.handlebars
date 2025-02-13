@@ -1,5 +1,5 @@
-<header>
-  <a href="/products" class="logo"> Productos</a>
+<header id="header">
+  <a href="/products" class="logo">Productos</a>
 
   <nav>
     <ul>
@@ -8,24 +8,24 @@
   </nav>
 </header>
 
-<h1>{{title}}</h1>
-<p>Total de carritos: {{totalCarts}}</p>
+<h1 id="page-title">{{title}}</h1>
+<p id="total-carts">Total de carritos: {{totalCarts}}</p>
 
 {{#each carts}}
 <div class="cart-container">
-    <h2>Carrito ID: {{_id}}</h2>
+    <h2 class="cart-id">Carrito ID: {{_id}}</h2>
     {{#if products.length}}
-        <ul>
+        <ul class="product-list">
         {{#each products}}
-            <li>
-                Producto: {{product.title}}<br>
-                Precio: {{product.price}}<br>
-                Cantidad: {{quantity}}
+            <li class="product-item">
+                <span class="product-title">Producto: {{product.title}}</span><br>
+                <span class="product-price">Precio: {{product.price}}</span><br>
+                <span class="product-quantity">Cantidad: {{quantity}}</span>
             </li>
         {{/each}}
         </ul>
     {{else}}
-        <p>El carrito no tiene productos.</p>
+        <p class="empty-cart">El carrito no tiene productos.</p>
     {{/if}}
 </div>
 {{/each}}

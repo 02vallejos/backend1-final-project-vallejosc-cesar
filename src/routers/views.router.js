@@ -17,9 +17,11 @@ viewsRouter.route("/products")
         const productsResult = products.docs.map(
             prod => {
                 const { _id, ...rest } = prod.toObject();
-                return rest
-            }
-        )
+                return {
+                    id: _id,
+                    ...rest
+                }
+            })
         res.render('products', { 
             products: productsResult,
             hasPrevPage: products.hasPrevPage,
@@ -35,16 +37,17 @@ viewsRouter.route("/products")
     }
 })
 
-viewsRouter.route("/products/upload")
+viewsRouter.route("/upload")
     .get((req, res) => {
         res.render('upload')
     })
     .post(async (req, res) => {
         try {
             const newProduct = await productManager.addProduct(req.body);
-            res.redirect("/");
+            console.log("Producto cargado con exito")
+            res.redirect("/products");
         } catch (error) {
-            console.error("Error al guardar los Productos + R", error);
+            console.error("Error al guardar los Productos + VR", error);
             res.status(500).send("Error en el servidor al guardar los Productos + R");
         }
     });

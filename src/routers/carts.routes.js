@@ -102,7 +102,7 @@ cartsRouter.put('/:cid/product/:pid', async (req, res) => {
         const newQuantity = req.body.quantity;
 
         const updatedCart = await cartManager.updateProductQuantity(cartId, productId, newQuantity);
-
+        
         res.json({
             status: 'success',
             message: 'Cantidad del producto actualizada correctamente',

@@ -10,8 +10,6 @@ class ProductManager {
     async addProduct(data) {
         const { title, description, code, status, price, stock, category, thumbnail } = data;
         // Podemos leer el archivo y guardarme el array de producto
-       console.log("data:");
-       console.log(data);
         if (!title || !description || !code || !status || !price || !stock || !category || !thumbnail) {
             throw new Error("Todos los campos son obligatorios.");
         }
@@ -23,7 +21,7 @@ class ProductManager {
         }
       
         // Crear el nuevo producto
-        const newProduct = {
+        const newProduct = new ProductsModel ({
             title,
             description,
             code,
@@ -32,7 +30,7 @@ class ProductManager {
             stock: Number(stock),     // Asegurar que sea número
             category,
             thumbnail,
-        };
+        });
 
         // validamos el codigo
         const existingProduct = await ProductsModel.findOne({ code });
@@ -40,8 +38,8 @@ class ProductManager {
             throw new Error("Ya existe un producto con ese codigo!");
         }
         
-        const savedProduct = new ProductsModel(newProduct);
-        await this.saveProducts(savedProduct);
+        await newProduct.save();
+        return newProduct;
     }
 
     async getProducts({ limit, page, sort, query } = {} ) {
@@ -83,8 +81,7 @@ class ProductManager {
                     prevLink: hasPrevPage ? `/api/products?limit=${limit}&page=${page - 1}&sort=${sort}&query=${query}` : null,
                     nextLink: hasNextPage ? `/api/products?limit=${limit}&page=${page + 1}&sort=${sort}&query=${query}` : null,
                 };      
-            // const arrayProducts = await this.readProducts(limit, page, sort, query );
-            // return arrayProducts;
+
         } catch (error) {
             console.error("Error al obtener los Productos - PM", error);
         }
@@ -101,26 +98,18 @@ class ProductManager {
         }
     }
 
-    async saveProducts(product) {
-        try {
-            await product.save();
-        } catch (error) {
-            console.error("Error al guardar los Productos - PM", error);
-        }
-    }
-
     async updateProductForId(id, productUpdated) {
         try {
-            const arrayProducts = await this.readProducts();
-            const index = arrayProducts.findIndex(prod => prod.id == id);
+            const updateProduct = await ProductsModel.findByIdAndUpdate(id, productUpdated, { new: true });
 
-            if (index != -1) {
-                arrayProducts[index] = { ...arrayProducts[index], ...productUpdated };
-                await this.saveProducts(arrayProducts);
-                console.log("El producto fue actualizado con exito");
-            } else {
-                console.log("No se encontro el objeto");
+            if (!updateProduct) {
+                console.log("Producto no encontrado");
+                return {message: "Producto no encontrado"};
             }
+
+            console.log("El producto fue actualizado con exito");
+            return updateProduct;
+
         } catch (error) {
             console.log("Error al actualizar el producto", error);
             throw error;
@@ -129,16 +118,16 @@ class ProductManager {
 
     async deleteProductById(id) {
         try {
-            const arrayProducts = await this.readProducts();
-            const index = arrayProducts.findIndex(prod => prod.id == id);
+            const deleteProduct = await ProductsModel.findByIdAndDelete(id);
 
-            if (index != -1) {
-                arrayProducts.splice(index, 1);
-                this.saveProducts(arrayProducts);
-                console.log("Producto eliminado con exito!");
-            } else {
-                console.log("No se encontro el producto");
+            if(!deleteProduct) {
+                console.log("No se encontro el produco");
+                return { message: "Producto no encontrado"};
             }
+
+            console.log("Produco eliminado con exito");
+            return { message: "Producto no encontrado"};
+
         } catch (error) {
             console.log("Error al eliminar el producto", error);
             throw error;

@@ -3,7 +3,7 @@
 
   <nav>
     <ul>
-      <li><a href="/products/upload" class="btn">Upload</a></li>
+      <li><a href="/upload" class="btn">Upload</a></li>
       <li><a href="/carts" class="btn">Carrito</a></li>
     </ul>
   </nav>
@@ -15,13 +15,31 @@
     <img src="{{this.thumbnail}}" alt="{{this.title}}">
     <div class="content">
       <h3>{{this.title}}</h3>
+      <p>{{this.price}}</p>
       <p>{{this.description}}</p>
-      <a href="/api/products/{{this._id}}" class="btn">Eliminar</a>
-      <a href="/addToCar/{{this._id}}/addToCard" class="btn">Agregar carrito</a>
+      <a href="/api/products/delete/{{this.id}}" class="btn">Eliminar</a>
+      <a href="/addToCar/{{this.id}}/addToCard" class="btn">Agregar carrito</a>
     </div>
   </div>
   {{/each}}
 </div>
+
+<form action="/products" method="GET" id="filterForm">
+  <label for="query">Buscar:</label>
+  <input type="text" name="query" id="query" placeholder="Buscar producto..." value="{{query}}">
+  
+  <label for="sort">Ordenar:</label>
+  <select name="sort" id="sort">
+    <option value="" {{#unless sort}}selected{{/unless}}>Sin ordenar</option>
+    <option value="asc" {{#if (eq sort "asc")}}selected{{/if}}>Precio Ascendente</option>
+    <option value="desc" {{#if (eq sort "desc")}}selected{{/if}}>Precio Descendente</option>
+  </select>
+
+  <label for="limit">Productos por página:</label>
+  <input type="number" name="limit" id="limit" min="1" value="{{limit}}">
+
+  <button type="submit" class="btn">Filtrar</button>
+</form>
 
 <div id="pagination">
   {{#if hasPrevPage}}
